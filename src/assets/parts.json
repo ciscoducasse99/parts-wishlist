@@ -1,0 +1,20 @@
+[
+    {
+        "name": "BN Type II Front Bumper",
+        "image": null,
+        "caterory": "Exterior",
+        "link": "www.google.com",
+        "partNumber": "string",
+        "videoLink": "string",
+        "obtained": false
+    },
+    {
+        "name": "Garret",
+        "image": null,
+        "caterory": "Engine",
+        "link": "www.google.com",
+        "partNumber": "string",
+        "videoLink": "string",
+        "obtained": false
+    }
+]

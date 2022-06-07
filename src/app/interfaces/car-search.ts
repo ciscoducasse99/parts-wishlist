@@ -1,5 +1,5 @@
 export interface CarSearch {
+    modelYear?:string,
     make:string,
-    model?:string,
-    year?: string
+    vehicleModel?: string
 }
