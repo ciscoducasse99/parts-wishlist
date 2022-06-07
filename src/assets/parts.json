@@ -2,7 +2,7 @@
     {
         "name": "BN Type II Front Bumper",
         "image": null,
-        "caterory": "Exterior",
+        "category": "Exterior",
         "link": "www.google.com",
         "partNumber": "string",
         "videoLink": "string",
@@ -11,7 +11,16 @@
     {
         "name": "Garret",
         "image": null,
-        "caterory": "Engine",
+        "category": "Engine",
+        "link": "www.google.com",
+        "partNumber": "string",
+        "videoLink": "string",
+        "obtained": false
+    },
+    {
+        "name": "Sunroof-Free Headliner",
+        "image": null,
+        "category": "Interior",
         "link": "www.google.com",
         "partNumber": "string",
         "videoLink": "string",
