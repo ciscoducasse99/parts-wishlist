@@ -16,7 +16,7 @@ import { PartFormComponent as PartFormComponentType } from '../part-form/part-fo
   `,
 })
 export class AddPartBtnComponent {
-  constructor(private modalService: ModalService<PartFormComponentType>) {}
+  constructor(private modalService: ModalService<PartFormComponentType>,) {}
 
   async showPartsModal(): Promise<void> {
     const {PartFormComponent} = await import(

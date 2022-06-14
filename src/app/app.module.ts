@@ -10,8 +10,8 @@ import { PartListingComponent } from './components/part-listing/part-listing.com
 import { AddPartBtnComponent } from './components/add-part-btn/add-part-btn.component';
 
 import {ModalModule} from './modules/modal.module';
-import {  NewsletterComponentModule } from './components/newsletter/newsletter.component';
 import { PartFormComponentModule } from './components/part-form/part-form.component';
+import { PartModalContentComponent } from './components/part-modal-content/part-modal-content.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +21,11 @@ import { PartFormComponentModule } from './components/part-form/part-form.compon
     PartsComponent,
     PartListingComponent,
     AddPartBtnComponent,
+    PartModalContentComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NewsletterComponentModule,
     PartFormComponentModule,
 
     /*

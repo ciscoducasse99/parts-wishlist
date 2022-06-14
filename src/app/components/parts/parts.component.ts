@@ -28,7 +28,6 @@ export class PartsComponent implements OnInit {
           // requests heroes from the server.
         .subscribe(parts => {
           this.partListings = parts
-          console.log(parts)
         });
 
   }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewsletterComponent } from './newsletter.component';
+import { PartModalContentComponent } from './part-modal-content.component';
 
-describe('NewsletterComponent', () => {
-  let component: NewsletterComponent;
-  let fixture: ComponentFixture<NewsletterComponent>;
+describe('PartModalContentComponent', () => {
+  let component: PartModalContentComponent;
+  let fixture: ComponentFixture<PartModalContentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewsletterComponent ]
+      declarations: [ PartModalContentComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewsletterComponent);
+    fixture = TestBed.createComponent(PartModalContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

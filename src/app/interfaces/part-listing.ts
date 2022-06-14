@@ -1,9 +1,9 @@
 export interface PartListing {
-    category:string,
     name:string,
+    category:string,
     link:string,
-    image?:string,
+    imageLink:string,
     partNumber?:string,
-    videoLink?:string,
+    reason?:string,
     obtained:boolean
 }

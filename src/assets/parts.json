@@ -6,7 +6,8 @@
         "link": "www.google.com",
         "partNumber": "string",
         "videoLink": "string",
-        "obtained": false
+        "obtained": false,
+        "reason": "Becuase its cool"
     },
     {
         "name": "Garret",
@@ -15,7 +16,8 @@
         "link": "www.google.com",
         "partNumber": "string",
         "videoLink": "string",
-        "obtained": false
+        "obtained": false,
+        "reason": null
     },
     {
         "name": "Sunroof-Free Headliner",
@@ -24,6 +26,17 @@
         "link": "www.google.com",
         "partNumber": "string",
         "videoLink": "string",
-        "obtained": false
+        "obtained": false,
+        "reason": "Cleaner look"
+    },
+    {
+        "name": "Shineauto Spec-G Front Aero Bumper",
+        "image": null,
+        "category": "Exterior",
+        "link": "www.google.com",
+        "partNumber": "string",
+        "videoLink": "string",
+        "obtained": false,
+        "reason": null
     }
 ]

@@ -1,4 +1,4 @@
-import {Component, NgModule, ViewChild} from '@angular/core';
+import {Component, NgModule, ViewChild, OnInit} from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -10,31 +10,52 @@ import {CommonModule} from '@angular/common';
 
 import {ModalModule} from '../../modules/modal.module';
 import {ModalComponent} from '../modal/modal.component';
+import { PartListing } from 'src/app/interfaces/part-listing';
 
 @Component({
   selector: 'app-part-form',
   templateUrl: './part-form.component.html',
   styleUrls: ['./part-form.component.scss']
 })
-export class PartFormComponent {
-  @ViewChild('modalComponent') modal:
+export class PartFormComponent implements OnInit{
+  @ViewChild('partFormComponent') modal:
   | ModalComponent<PartFormComponent>
   | undefined;
 
-partForm: FormGroup;
+  partForm: FormGroup;
+  submitted = false;
 
 constructor(
   public fb: FormBuilder,
 ) {
-  this.partForm = this.fb.group({
-    username: ['', [Validators.required]]
-  });
 }
 
-async createRecord(): Promise<void> {
-  console.log(this.partForm.value);
+ngOnInit(){
+ this.partForm = this.fb.group({
+  name: ['', [Validators.required]],
+  category: [, [Validators.required]],
+  link:['', [Validators.required]],
+  imageLink:['', [Validators.required]],
+  partNumber:[''],
+  reason:['']
+  })
+}
 
-  await this.close();
+ // convenience getter for easy access to form fields
+ get f() { return this.partForm.controls; }
+
+async createListing(): Promise<void> {
+  this.submitted = true;
+
+  if(!this.partForm.valid) return
+
+  const newForm: PartListing ={
+    ...this.partForm.value,
+    obtained:false
+  }
+
+  console.log(newForm)
+
 }
 
 async close(): Promise<void> {

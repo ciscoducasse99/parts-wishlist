@@ -1,14 +1,11 @@
-<div class="p-2 rounded-t-md border-2 border-green-900 bg-zinc-900">
-  <div class="flex justify-between items-center">
-    <p>{{ part.name }}</p>
-    <span
-      class="border"
-      [ngClass]="part.obtained ? 'border-emerald-900' : 'border-red-900'"
-    >
-      &#10004;
-    </span>
+<div class="cursor-pointer" (click)="showPartListingModal(part)">
+  <div class="p-2 rounded-t-md border-2 border-green-900 bg-zinc-900">
+    <div class="flex justify-between items-center">
+      <p>{{ part.name }}</p>
+      <span class="border"> &#10004; </span>
+    </div>
   </div>
-</div>
-<div class="bg-emerald-900 px-2 rounded-b-md text-neutral-400">
-  {{ part.category }}
+  <div class="bg-emerald-900 px-2 rounded-b-md text-neutral-400">
+    {{ part.category }}
+  </div>
 </div>

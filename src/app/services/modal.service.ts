@@ -12,10 +12,10 @@ import {
   providedIn: 'root',
 })
 export class ModalService<T> {
-  private componentRef: ComponentRef<T> | undefined;
+  private componentRef: any | undefined;
 
   constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
+    private cfr: ComponentFactoryResolver,
     private appRef: ApplicationRef,
     private injector: Injector
   ) {}
@@ -25,9 +25,10 @@ export class ModalService<T> {
       return;
     }
 
-    this.componentRef = this.componentFactoryResolver
+    this.componentRef = this.cfr
       .resolveComponentFactory<T>(component)
       .create(this.injector);
+      
     this.appRef.attachView(this.componentRef.hostView);
 
     const domElem = (this.componentRef.hostView as 
