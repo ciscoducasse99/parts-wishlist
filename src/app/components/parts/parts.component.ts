@@ -20,7 +20,7 @@ export class PartsComponent implements OnInit {
   }
  
   // Now it returns an Observable<Hero[]>
-  getParts(): void {
+  getParts(){
     this.partListingService.getListings()
           // Waits for the Observable to emit the array of parts —which could happen now or 
           // several minutes from now (asyncroness). The subscribe() method passes the emitted array to the callback, which
@@ -30,5 +30,11 @@ export class PartsComponent implements OnInit {
           this.partListings = parts
         });
 
+  }
+
+  createNewListing(part: PartListing){
+    this.partListingService.createListing(part).subscribe(part=>{
+      this.partListings.push(part)
+    })
   }
 }

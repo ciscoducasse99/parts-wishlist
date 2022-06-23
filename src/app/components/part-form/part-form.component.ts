@@ -1,4 +1,4 @@
-import {Component, NgModule, ViewChild, OnInit} from '@angular/core';
+import {Component, NgModule, ViewChild, OnInit, Output, EventEmitter} from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -11,6 +11,7 @@ import {CommonModule} from '@angular/common';
 import {ModalModule} from '../../modules/modal.module';
 import {ModalComponent} from '../modal/modal.component';
 import { PartListing } from 'src/app/interfaces/part-listing';
+import { PartListingService } from 'src/app/services/part-listing.service';
 
 @Component({
   selector: 'app-part-form',
@@ -25,8 +26,10 @@ export class PartFormComponent implements OnInit{
   partForm: FormGroup;
   submitted = false;
 
+  @Output() onSubmit: EventEmitter<PartListing> = new EventEmitter()
+
 constructor(
-  public fb: FormBuilder,
+  public fb: FormBuilder, private partsListingService:PartListingService
 ) {
 }
 
@@ -47,14 +50,17 @@ ngOnInit(){
 async createListing(): Promise<void> {
   this.submitted = true;
 
-  if(!this.partForm.valid) return
+  if(!this.partForm.valid) {
+    return;
+  }
 
   const newForm: PartListing ={
     ...this.partForm.value,
     obtained:false
   }
 
-  console.log(newForm)
+  this.partsListingService.createListing(newForm).subscribe(something => console.log(something))
+  this.close()
 
 }
 

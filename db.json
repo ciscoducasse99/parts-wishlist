@@ -1,0 +1,67 @@
+{
+  "parts": [
+    {
+      "id": 1,
+      "name": "Shineauto Spec-G Front Aero Bumper",
+      "category": "Exterior",
+      "link": "https://www.shineautoproject.com/portfolio/240sx-s13-spec-g-full-aero/",
+      "imageLink": "https://www.shineautoproject.com/wp-content/gallery/s13-fb-g/5674669709b391dac604z1.jpg",
+      "partNumber": "S13-FB-G",
+      "reason": "Looks dope.",
+      "obtained": false
+    },
+    {
+      "id": 2,
+      "name": "BN Type II Front Bumper",
+      "image": null,
+      "category": "Exterior",
+      "link": "www.google.com",
+      "partNumber": "string",
+      "videoLink": "string",
+      "obtained": false,
+      "reason": "Becuase its cool"
+    },
+    {
+      "id": 3,
+      "name": "Garret",
+      "image": null,
+      "category": "Engine",
+      "link": "www.google.com",
+      "partNumber": "string",
+      "videoLink": "string",
+      "obtained": false,
+      "reason": null
+    },
+    {
+      "id": 4,
+      "name": "Sunroof-Free Headliner",
+      "image": null,
+      "category": "Interior",
+      "link": "www.google.com",
+      "partNumber": "string",
+      "videoLink": "string",
+      "obtained": false,
+      "reason": "Cleaner look"
+    },
+    {
+      "name": "S13 Front Frame Rail",
+      "category": "Misc.",
+      "link": "https://www.xcessivemanufacturing.com/nissan-drivetrain-chassis-engine-s-chassis-n-ffr-s13.html",
+      "imageLink": "https://www.xcessivemanufacturing.com/media/catalog/product/cache/2bbbf5807e9f131108e9b8e9200467b9/n/-/n-ffr-s13p5.jpg",
+      "partNumber": " SKU N-FFR-S13",
+      "reason": "My frame rails aren't the worst. But they're not the best. Can have the option to do them if need be.",
+      "obtained": false,
+      "id": 5
+    },
+    {
+      "name": "Upper Radiator Support Bracket",
+      "category": "Engine",
+      "link": "https://www.enjukuracing.com/products/oem-nissan-s14-240sx-upper-radiator-support-bracket.html",
+      "imageLink": "https://cdn11.bigcommerce.com/s-79xyvl/images/stencil/1280x1280/products/35635/66149/n2__09842.1476989352.jpg?c=2",
+      "partNumber": "21543-65F10",
+      "reason": "",
+      "obtained": false,
+      "id": 6
+    }
+  ]
+}

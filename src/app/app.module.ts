@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from "@angular/common/http"
+//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -11,7 +12,8 @@ import { AddPartBtnComponent } from './components/add-part-btn/add-part-btn.comp
 
 import {ModalModule} from './modules/modal.module';
 import { PartFormComponentModule } from './components/part-form/part-form.component';
-import { PartModalContentComponent } from './components/part-modal-content/part-modal-content.component';
+import { PartListingModalContentComponent } from './components/part-listing-modal-content/part-listing-modal-content.component';
+import { DynamicChildLoaderDirective } from './directives/load-child.directive';
 
 @NgModule({
   declarations: [
@@ -21,18 +23,14 @@ import { PartModalContentComponent } from './components/part-modal-content/part-
     PartsComponent,
     PartListingComponent,
     AddPartBtnComponent,
-    PartModalContentComponent,
+    PartListingModalContentComponent,
+    DynamicChildLoaderDirective,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    PartFormComponentModule,
-
-    /*
-      Since 'ModalComponent' would be used multiple times, we must create it's own Module so we can declare it
-      in multiple places
-    */
-    ModalModule,
+    PartFormComponentModule, // Feature Module
+    ModalModule, // Feature Module
   ],
   providers: [],
   bootstrap: [AppComponent]

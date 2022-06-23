@@ -12,7 +12,7 @@ import {
   providedIn: 'root',
 })
 export class ModalService<T> {
-  private componentRef: any | undefined;
+  private componentRef: ComponentRef<any> | undefined;
 
   constructor(
     private cfr: ComponentFactoryResolver,
@@ -20,21 +20,22 @@ export class ModalService<T> {
     private injector: Injector
   ) {}
 
-  async open(component: Type<T>): Promise<void> {
+  async open(component: Type<T>): Promise<any> {
+
     if (this.componentRef) {
       return;
     }
 
-    this.componentRef = this.cfr
+    const componentRef = this.cfr
       .resolveComponentFactory<T>(component)
       .create(this.injector);
       
-    this.appRef.attachView(this.componentRef.hostView);
+    this.appRef.attachView(componentRef.hostView);
 
-    const domElem = (this.componentRef.hostView as 
-                     EmbeddedViewRef<any>)
-                     .rootNodes[0] as HTMLElement;
+    const domElem = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
     document.body.appendChild(domElem);
+
+    return componentRef
   }
 
   async close(): Promise<void> {

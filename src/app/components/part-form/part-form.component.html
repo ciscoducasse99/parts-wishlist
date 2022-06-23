@@ -1,4 +1,5 @@
 <app-modal #partFormComponent>
+  <ng-container *ngTemplateOutlet="modalHeader"></ng-container>
   <form [formGroup]="partForm" (ngSubmit)="createListing()">
     <label
       for="name"
@@ -7,7 +8,12 @@
       <div class="inline-block font-semibold">
         Part Name <span class="text-red-600">*</span>
       </div>
-      <p *ngIf="submitted" class="text-red-600">Part name is required.</p>
+      <p
+        *ngIf="submitted && f['name'].errors?.['required']"
+        class="text-red-600"
+      >
+        Part name is required.
+      </p>
     </label>
     <input
       id="partname"
@@ -16,7 +22,7 @@
       formControlName="name"
       class="block w-full p-3 mt-2 rounded-md text-gray-700 border-2 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
       required
-      [ngClass]="{ ' border-red-600': submitted && f['name'].errors !== null }"
+      [ngClass]="{ ' border-red-600': submitted && f['name'].errors?.['required'] }"
     />
 
     <label
@@ -26,7 +32,10 @@
       <div class="inline-block font-semibold">
         Category Type <span class="text-red-600">*</span>
       </div>
-      <p *ngIf="submitted" class="text-red-600">
+      <p
+        *ngIf="submitted && f['category'].errors?.['required']"
+        class="text-red-600"
+      >
         Category type is required.
       </p></label
     >
@@ -37,7 +46,7 @@
       formControlName="category"
       class="block w-full p-3 mt-2 rounded-md text-gray-700 border-2 bg-gray-200 focus:outline-none focus:bg-gray-300 focus:shadow-inner"
       [ngClass]="{
-        'border-red-700': submitted && f['category'].errors !== null
+        'border-red-700': submitted && f['category'].errors?.['required']
       }"
     >
       <option value="Engine">Engine</option>
@@ -56,7 +65,10 @@
       <div class="inline-block font-semibold">
         Product Link <span class="text-red-600">*</span>
       </div>
-      <p *ngIf="submitted" class="text-red-600">
+      <p
+        *ngIf="submitted && f['link'].errors?.['required']"
+        class="text-red-600"
+      >
         Product link is required.
       </p></label
     >
@@ -67,7 +79,7 @@
       formControlName="link"
       class="block w-full p-3 mt-2 text-gray-700 border-2 rounded-md bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
       required
-      [ngClass]="{ 'border-red-700': submitted && f['link'].errors !== null }"
+      [ngClass]="{ 'border-red-700': submitted && f['link'].errors?.['required'] }"
     />
 
     <label
@@ -77,7 +89,12 @@
       <div class="inline-block font-semibold">
         Image Link <span class="text-red-600">*</span>
       </div>
-      <p *ngIf="submitted" class="text-red-600">Image link is required.</p>
+      <p
+        *ngIf="submitted && f['imageLink'].errors?.['required']"
+        class="text-red-600"
+      >
+        Image link is required.
+      </p>
     </label>
     <input
       id="imageLink"
@@ -86,7 +103,7 @@
       formControlName="imageLink"
       class="block w-full p-3 mt-2 border-2 rounded-md text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
       [ngClass]="{
-        'border-red-700': submitted && f['imageLink'].errors !== null
+        'border-red-700': submitted && f['imageLink'].errors?.['required']
       }"
     />
 
@@ -117,6 +134,12 @@
     <ng-container *ngTemplateOutlet="modalFooter"></ng-container>
   </form>
 </app-modal>
+
+<ng-template #modalHeader>
+  <div class="text-gray-800 py-3 flex justify-between items-center">
+    <h3>Add A Part</h3>
+  </div>
+</ng-template>
 
 <ng-template #modalFooter>
   <div class="py-3 flex justify-between items-center">
