@@ -18,18 +18,10 @@ export class PartListingComponent {
     // Lazy loading part-modal-content Component
     const {PartListingModalContentComponent} = await import('../part-listing-modal-content/part-listing-modal-content.component');
     
-      /*
-        TODO: Add data to PartModalContentComponent which would be the child of the Modal Wrapper
-        Probably need to use the componentfactory here
-
-        ViewContainerRef returns an instance of ComponentRef which has a property called 'instance'. From here, I can
-        send the componentRef to the service.
-      */
-
-
     // Passing the lazy loaded component into a wrapper component via ModalService
     const cmp = await this.modalService.open(PartListingModalContentComponent);
 
+    // assign the new instance a 'part' object to display fetched data
     cmp.instance.part = this.part
   }
 

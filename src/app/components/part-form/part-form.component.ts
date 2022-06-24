@@ -1,4 +1,4 @@
-import {Component, NgModule, ViewChild, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, NgModule, ViewChild, OnInit, Output, Input, EventEmitter} from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -26,7 +26,7 @@ export class PartFormComponent implements OnInit{
   partForm: FormGroup;
   submitted = false;
 
-  @Output() onSubmit: EventEmitter<PartListing> = new EventEmitter()
+  @Input() onSubmitForm: EventEmitter<PartListing>
 
 constructor(
   public fb: FormBuilder, private partsListingService:PartListingService
@@ -58,8 +58,8 @@ async createListing(): Promise<void> {
     ...this.partForm.value,
     obtained:false
   }
-
-  this.partsListingService.createListing(newForm).subscribe(something => console.log(something))
+  
+  this.onSubmitForm.emit(newForm)
   this.close()
 
 }

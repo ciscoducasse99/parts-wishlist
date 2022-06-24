@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { Component,Output, EventEmitter} from '@angular/core';
+import { PartListing } from 'src/app/interfaces/part-listing';
 
 import {ModalService} from '../../services/modal.service';
 
@@ -18,11 +19,17 @@ import { PartFormComponent as PartFormComponentType } from '../part-form/part-fo
 export class AddPartBtnComponent {
   constructor(private modalService: ModalService<PartFormComponentType>,) {}
 
+  @Output() onSubmitForm = new EventEmitter<PartListing>();
+
   async showPartsModal(): Promise<void> {
     const {PartFormComponent} = await import(
       '../part-form/part-form.component'
     );
 
-    await this.modalService.open(PartFormComponent);
+    const cmp = await this.modalService.open(PartFormComponent);
+    cmp.instance.onSubmitForm = this.onSubmitForm
+
+    console.log(cmp)
+
   }
 }
