@@ -1,4 +1,5 @@
 export interface PartListing {
+    id:number,
     name:string,
     category:string,
     link:string,

@@ -12,22 +12,22 @@ import { PartListing } from '../../interfaces/part-listing';
 export class PartsComponent implements OnInit {
 
   partListings: PartListing[] = []
+  loaded:boolean = false
 
   constructor(private partListingService: PartListingService) { }
 
   ngOnInit(): void {
     this.getParts()
   }
- 
-  // Now it returns an Observable<Hero[]>
+
   getParts(){
     this.partListingService.getListings()
           // Waits for the Observable to emit the array of parts —which could happen now or 
-          // several minutes from now (asyncroness). The subscribe() method passes the emitted array to the callback, which
-          // sets the component's partListing property. This asynchronous approach will work when the services 
-          // requests heroes from the server.
+          // several minutes from now (async). The subscribe() method passes the emitted array to the callback, which
+          // sets the component's partListing property.
         .subscribe(parts => {
           this.partListings = parts
+          setTimeout(()=>this.loaded = true, 3000)
         });
 
   }
@@ -36,5 +36,20 @@ export class PartsComponent implements OnInit {
     this.partListingService.createListing(part).subscribe(part=>{
       this.partListings.push(part)
     })
+  }
+
+  deleteListing(part: PartListing){
+    this.partListingService.deleteListing(part).subscribe(
+      () => (this.partListings = this.partListings.filter((p) => p.id !== part.id))
+    )
+  }
+
+  updateListing(part: PartListing){
+    this.partListingService.updateListing(part).subscribe(
+      (updatedPart) => {
+        let listing = this.partListings.find(p => p.id === part.id)
+        listing = updatedPart
+      }
+    )
   }
 }

@@ -29,7 +29,7 @@ export class PartFormComponent implements OnInit{
   @Input() onSubmitForm: EventEmitter<PartListing>
 
 constructor(
-  public fb: FormBuilder, private partsListingService:PartListingService
+  public fb: FormBuilder
 ) {
 }
 

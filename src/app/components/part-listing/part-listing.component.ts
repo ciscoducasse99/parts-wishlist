@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { PartListing } from 'src/app/interfaces/part-listing';
 import { ModalService } from 'src/app/services/modal.service';
 import { PartListingModalContentComponent as PDCCType } from '../part-listing-modal-content/part-listing-modal-content.component';
@@ -10,6 +10,7 @@ import { PartListingModalContentComponent as PDCCType } from '../part-listing-mo
 export class PartListingComponent {
 
   @Input() part:PartListing;
+  @Output() onDeleteListing = new EventEmitter<PartListing>()
 
   constructor(private modalService: ModalService<PDCCType>) {``
   }
@@ -23,6 +24,9 @@ export class PartListingComponent {
 
     // assign the new instance a 'part' object to display fetched data
     cmp.instance.part = this.part
+    cmp.instance.onDeleteListing = this.onDeleteListing
+
+    console.log(cmp)
   }
 
 }

@@ -14,11 +14,22 @@ export class PartListingModalContentComponent {
 
 
   @Input() part: PartListing
+  @Input() onDeleteListing: any
+  updated: boolean = false;
+
   constructor() { }
 
+  async updateListing(): Promise<PartListing>{
+    return this.part
+  }
+
+  async deleteListing(part: PartListing): Promise<void>{ 
+    
+    this.onDeleteListing.emit(part)
+    await this.modal?.close()
+  }
 
   async close(): Promise<void> {
-    console.log(this.modal)
     await this.modal?.close();
   }
 

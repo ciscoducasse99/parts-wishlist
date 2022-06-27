@@ -1,11 +1,12 @@
 <div class="cursor-pointer" (click)="showPartListingModal(part)">
-  <div class="p-2 rounded-t-md border-2 border-green-900 bg-zinc-900">
-    <div class="flex justify-between items-center">
-      <p>{{ part.name }}</p>
-      <span class="border"> &#10004; </span>
-    </div>
+  <div
+    class="rounded-t-md p-5 self-stretch border-2 border-green-900 bg-zinc-900"
+  >
+    <p>{{ part.name }}</p>
   </div>
-  <div class="bg-emerald-900 px-2 rounded-b-md text-neutral-400">
+  <div
+    class="rounded-b-md bg-emerald-900 p-2 font-bold uppercase text-xs text-gray-300"
+  >
     {{ part.category }}
   </div>
 </div>

@@ -29,11 +29,13 @@ export class PartListingService {
     return this.http.get<PartListing[]>(this.partsURL)
   }
 
-  updateListing = (listing:object) =>{
-
+  updateListing(listing: PartListing): Observable<PartListing> {
+    const url = `${this.partsURL}/${listing.id}`;
+    return this.http.patch<PartListing>(url, listing);
   }
 
-  deleteListings = (listing:object) =>{
-    
+  deleteListing(listing: PartListing): Observable<PartListing> {
+    const url = `${this.partsURL}/${listing.id}`;
+    return this.http.delete<PartListing>(url);
   }
 }

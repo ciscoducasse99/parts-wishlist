@@ -29,7 +29,5 @@ export class AddPartBtnComponent {
     const cmp = await this.modalService.open(PartFormComponent);
     cmp.instance.onSubmitForm = this.onSubmitForm
 
-    console.log(cmp)
-
   }
 }

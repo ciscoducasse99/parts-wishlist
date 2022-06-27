@@ -22,17 +22,6 @@
       "reason": "Becuase its cool"
     },
     {
-      "id": 3,
-      "name": "Garret",
-      "image": null,
-      "category": "Engine",
-      "link": "www.google.com",
-      "partNumber": "string",
-      "videoLink": "string",
-      "obtained": false,
-      "reason": null
-    },
-    {
       "id": 4,
       "name": "Sunroof-Free Headliner",
       "image": null,
@@ -64,10 +53,10 @@
       "id": 6
     },
     {
-      "name": "asfsa",
+      "name": "efwefw",
       "category": "Electrical",
-      "link": "qwq",
-      "imageLink": "fsdf",
+      "link": "asdads",
+      "imageLink": "eqweq",
       "partNumber": "",
       "reason": "",
       "obtained": false,
