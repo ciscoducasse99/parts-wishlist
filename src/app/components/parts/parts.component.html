@@ -30,11 +30,12 @@
   </svg>
 </div>
 <ng-template #parts>
-  <div class="grid grid-col-1 items-center lg:grid-cols-4 gap-4">
+  <div class="grid grid-col-1 items-center lg:grid-cols-4 gap-4 mb-10">
     <app-part-listing
       *ngFor="let part of partListings"
       [part]="part"
       (onDeleteListing)="deleteListing($any($event))"
+      (onUpdateListing)="updateListing($any($event))"
     ></app-part-listing>
   </div>
 </ng-template>

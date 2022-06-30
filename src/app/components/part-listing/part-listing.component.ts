@@ -11,6 +11,7 @@ export class PartListingComponent {
 
   @Input() part:PartListing;
   @Output() onDeleteListing = new EventEmitter<PartListing>()
+  @Output() onUpdateListing = new EventEmitter<PartListing>()
 
   constructor(private modalService: ModalService<PDCCType>) {``
   }
@@ -25,8 +26,7 @@ export class PartListingComponent {
     // assign the new instance a 'part' object to display fetched data
     cmp.instance.part = this.part
     cmp.instance.onDeleteListing = this.onDeleteListing
-
-    console.log(cmp)
+    cmp.instance.onUpdateListing = this.onUpdateListing
   }
 
 }

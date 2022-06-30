@@ -47,8 +47,7 @@ export class PartsComponent implements OnInit {
   updateListing(part: PartListing){
     this.partListingService.updateListing(part).subscribe(
       (updatedPart) => {
-        let listing = this.partListings.find(p => p.id === part.id)
-        listing = updatedPart
+        this.partListings[this.partListings.findIndex(p => p.id === updatedPart.id)] = updatedPart
       }
     )
   }

@@ -1,4 +1,4 @@
-import {Component, NgModule, ViewChild, OnInit, Output, Input, EventEmitter} from '@angular/core';
+import {Component, NgModule, ViewChild, OnInit, Input, EventEmitter} from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -11,7 +11,6 @@ import {CommonModule} from '@angular/common';
 import {ModalModule} from '../../modules/modal.module';
 import {ModalComponent} from '../modal/modal.component';
 import { PartListing } from 'src/app/interfaces/part-listing';
-import { PartListingService } from 'src/app/services/part-listing.service';
 
 @Component({
   selector: 'app-part-form',

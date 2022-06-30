@@ -31,7 +31,7 @@ export class PartListingService {
 
   updateListing(listing: PartListing): Observable<PartListing> {
     const url = `${this.partsURL}/${listing.id}`;
-    return this.http.patch<PartListing>(url, listing);
+    return this.http.put<PartListing>(url, listing);
   }
 
   deleteListing(listing: PartListing): Observable<PartListing> {
