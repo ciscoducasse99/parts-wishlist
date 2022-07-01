@@ -12,7 +12,7 @@ Clone repo. `ng serve` deploys angular app & `npm run server` launches fake serv
 - ~~Implement services for server requests & UI changes~~
 - ~~Forms for creating and updating parts~~ 
 - Error handling
-- ~~Implement Modal~~ | **<app-add-part-btn>** & **<app-part-listing>** lazy load components into modal component via Component Factory Resolver in modal-service (note: look into ViewContainerRef for future cases)
+- ~~Implement Modal~~ | **app-add-part-btn & app-part-listing** lazy load components into modal component via Component Factory Resolver in modal-service (**note: look into ViewContainerRef for future cases**)
 - ~~Use @Input & @Output decorators to use pass properties and methods in child components~~ 
 - Write tests
 - Implement routing | Not really needed, but doesn't hurt to learn how to implement.
