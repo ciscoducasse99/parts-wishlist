@@ -11,7 +11,7 @@ import { PartFormComponent as PartFormComponentType } from '../part-form/part-fo
     <button
       type="button"
       (click)="showPartsModal()"
-      class="bg-green-800 px-3 py-1 rounded-full"
+      class="bg-emerald-800 hover:bg-emerald-900 px-3 py-1 rounded-full text-sm uppercase font-medium"
     >Add Part</button
     >
   `,

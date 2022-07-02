@@ -1,12 +1,8 @@
-<div class="cursor-pointer" (click)="showPartListingModal(part)">
-  <div
-    class="rounded-t-md p-5 self-stretch border-2 border-green-900 bg-zinc-900"
-  >
-    <p>{{ part.name }}</p>
-  </div>
-  <div
-    class="rounded-b-md bg-emerald-900 p-2 font-bold uppercase text-xs text-gray-300"
-  >
-    {{ part.category }}
-  </div>
+<div class="p-5" (click)="showPartListingModal(part)">
+  <p class="font-semibold text-lg">{{ part.name }}</p>
+</div>
+<div
+  class="mt-auto bg-emerald-900 p-2 font-bold uppercase text-xs text-gray-300 font-sans"
+>
+  {{ part.category }}
 </div>

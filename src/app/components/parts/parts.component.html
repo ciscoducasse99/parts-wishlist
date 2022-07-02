@@ -1,11 +1,10 @@
 <div
   class="flex justify-between items-center p-3 bg-zinc-900 rounded-lg mb-5 min-w-sm max-w-4xl mx-auto sticky top-2"
 >
-  <div class="flex">
-    <h6 class="mr-3">Filters:</h6>
-    <ul class="flex">
-      <li class="rounded-full border bg-emerald-900 px-2">Something</li>
-    </ul>
+  <div class="w-2/3 mr-2 p-2 border border-emerald-600 rounded">
+    <span class="uppercase font-extrabold text-emerald-600 text-ellipsis"
+      >TODO: </span
+    >Filter logic
   </div>
   <app-add-part-btn
     (onSubmitForm)="createNewListing($any($event))"
@@ -30,9 +29,10 @@
   </svg>
 </div>
 <ng-template #parts>
-  <div class="grid grid-col-1 items-center lg:grid-cols-4 gap-4 mb-10">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
     <app-part-listing
       *ngFor="let part of partListings"
+      class="flex flex-col cursor-pointer rounded-md border-2 border-green-900 bg-zinc-900"
       [part]="part"
       (onDeleteListing)="deleteListing($any($event))"
       (onUpdateListing)="updateListing($any($event))"

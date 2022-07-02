@@ -24,7 +24,7 @@ export class PartListingComponent {
     const cmp = await this.modalService.open(PartListingModalContentComponent);
 
     // assign the new instance a 'part' object to display fetched data
-    cmp.instance.part = this.part
+    cmp.instance.part = part
     cmp.instance.onDeleteListing = this.onDeleteListing
     cmp.instance.onUpdateListing = this.onUpdateListing
   }

@@ -27,7 +27,7 @@ export class PartsComponent implements OnInit {
           // sets the component's partListing property.
         .subscribe(parts => {
           this.partListings = parts
-          setTimeout(()=>this.loaded = true, 3000)
+          setTimeout(()=>this.loaded = true, 500)
         });
 
   }
