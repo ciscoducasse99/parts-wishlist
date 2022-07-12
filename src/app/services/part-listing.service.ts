@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable,  } from 'rxjs';
 import { PartListing } from '../interfaces/part-listing';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,7 +15,7 @@ const httpOptions = {
 })
 export class PartListingService {
 
-  private partsURL = 'http://localhost:5000/parts'
+  private partsURL = '/api/parts'
 
   constructor(private http: HttpClient) { 
    }
@@ -26,6 +27,7 @@ export class PartListingService {
   }
 
   getListings(): Observable<PartListing[]> {
+    console.log(environment)
     return this.http.get<PartListing[]>(this.partsURL)
   }
 
